@@ -1,5 +1,6 @@
 # Rear Lights Firmware
 ## Getting started
+**Please make sure you are using STMCUBE IDE version 1.8.0**
 1. Clone this repository with `git clone https://github.com/John-Carr/RearLightsFirmware.git --recursive` 
 to ensure you clone the submodules.
 2. Import this project into STM Cube IDE
