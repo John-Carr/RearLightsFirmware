@@ -83,7 +83,7 @@ void StartDefaultTask(void *argument);
 void StartBlink(void *argument);
 
 /* USER CODE BEGIN PFP */
-
+void CPP_UserSetup(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -152,7 +152,7 @@ int main(void)
   BlinkHandle = osThreadNew(StartBlink, NULL, &Blink_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
+  CPP_UserSetup();
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -386,7 +386,8 @@ void StartBlink(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    HAL_GPIO_TogglePin(Board_Ok_GPIO_Port, Board_Ok_Pin);
+    osDelay(500);
   }
   /* USER CODE END StartBlink */
 }
@@ -423,6 +424,8 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
+    HAL_GPIO_TogglePin(Error_GPIO_Port, Error_Pin);
+    osDelay(500);
   }
   /* USER CODE END Error_Handler_Debug */
 }

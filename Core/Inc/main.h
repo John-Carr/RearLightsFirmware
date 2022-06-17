@@ -92,7 +92,10 @@ void Error_Handler(void);
 #define Aux_C5_Pin GPIO_PIN_7
 #define Aux_C5_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-
+#define LT_GPIO_Pin LED1_EN_Pin
+#define LT_GPIO_Port LED1_EN_GPIO_Port
+#define RT_GPIO_Pin LED4_EN_Pin
+#define RT_GPIO_Port LED4_EN_GPIO_Port
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
